@@ -1,16 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Assignment Showcase</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 36px;
+            color: #333;
+        }
+
+        .overview {
+            max-width: 800px;
+            text-align: center;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .overview p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .gallery img {
+            max-width: 300px;
+            height: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #999;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to My CS180 Portfolio!</h1>
-    <a href="./1/index.html">Project 1</a>
+
+    <h1>My Assignment Showcase</h1>
+
+    <div class="overview">
+        <p>Welcome to my assignment showcase! Below are the results of my recent work. I have completed various tasks and projects, and here are some photos of my achievements. Feel free to browse through and see what I’ve been working on.</p>
+    </div>
+
+    <div class="gallery">
+        <img src="photo1.jpg" alt="Assignment Result 1">
+        <img src="photo2.jpg" alt="Assignment Result 2">
+        <img src="photo3.jpg" alt="Assignment Result 3">
+        <!-- Add more images as needed -->
+    </div>
+
+    <footer>
+        <p>© 2024 Your Name. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
