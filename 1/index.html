@@ -80,13 +80,31 @@
     </header>
 
     <section class="content">
-        <h2>Big</h2>
-        <p>contents</p>
+        <h2>1. Overview</h2>
+        <p>The goal of this assignment is to take the digitized Prokudin-Gorskii glass plate images and, 
+            using image processing techniques, automatically produce a color image with as few visual artifacts as possible.
+            In order to do these, I uses three methods steps by steps to get more accurate and delicate pictures, that is single scale search, multisacle pyramid search and edge align</p>
+        <h2>2. Details</h2>
+        <h3>2.1 Single scale search</h3>
+        <p>Single scale search is to exhaustively search over a window of possible displacements, which I set [-10,10]. Then, I use Normalized Cross-Correlation (NCC)
+            to evaluate the performance of alignment. But for different r,g,b picture, the brightness may be different too, so I first do (im - np.mean(im)), 
+            then I got the relative relationship among pixels. After that I do NCC and search which displacements is the best one. What's more, because the border of the picture always contains
+            a lot of noise, and due to the feature of np.roll which rolls some columes or rows to the other side, I only count for 90% of the picture central when caculate NCC.
+        </p>
+        <h3>2.2 multisacle search</h3>
+        <p>The exhaustive search only works well when the picture is small or it only need small displacements. When the picture is large, it takes pretty long time
+            to align and the performance is not good enough. Therefore, I use image pyramid to shrink the picture until its width/length is about 200-300 pixels. Then I do 
+            exhaustive search, then base on the previous displacements, do exhaustive search again on next level picture but with smaller displacements window, for example, I take [-5,5]
+            Do it until we are back to the orginal size, and the displacements is what we want. In practice, this method is really faster compare to single-scale, it only take about 20-30 second for 
+            the .tif picture to be correctly aligned.
+        </p>
+        <h2>B&W: Edge alignment</h2>
+        <p>However, merely with multisacle search won't solve any alignment. Some picture like emir.tif still performs bad. I think the reason is probably beause the empire is in the center of the picture 
+            and the brightness of r,g,b channels vary a lot. Therefore, I try a new way. I use cv2.Canny to find out where the edges are, then I do alignment according to these edges using method 2.2 . 
+            After I get the displacements, I apply it to the original r,g,b picture. And it turns out that it works really well.
+        </p>
 
-        <h3>mid</h3>
-        <p>contents</p>
-
-        <h3>Pic</h3>
+        <h3>Picture Show</h3>
         <div class="image-container">
             <img src="your-image.jpg" alt="pic">
         </div>
