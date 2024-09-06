@@ -56,13 +56,25 @@
         }
 
         .image-container {
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
             margin-bottom: 20px;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
+        .image-column {
+            width: 48%;
+            text-align: center;
+        }
+
+        .image-column h4 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #007BFF;
+        }
+
+        .image-column img {
+            width: 100%;
+            margin-bottom: 20px;
             border-radius: 8px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
@@ -106,9 +118,19 @@
 
         <h3>Picture Show</h3>
         <div class="image-container">
-            <img src="media/cathedral.jpg" alt="pic">
+            <div class="image-column">
+                <h4>Single-scale</h4>
+                <img src="media/cathedral.jpg" alt="pic1">
+                <img src="media/cathedral.jpg" alt="pic3">
+            </div>
+            <div class="image-column">
+                <h4>Pyramid</h4>
+                <img src="media/cathedral.jpg" alt="pic2">
+                <img src="media/cathedral.jpg" alt="pic4">
+            </div>
         </div>
 
+        <p>图片下方的文字描述，简要说明图片内容。</p>
         <p>des to pic</p>
     </section>
 
