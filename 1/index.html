@@ -109,7 +109,7 @@
             to align and the performance is not good enough. Therefore, I use image pyramid to shrink the picture until its width/length is about 200-300 pixels. Then I do 
             exhaustive search, then base on the previous displacements, do exhaustive search again on next level picture but with smaller displacements window, for example, I take [-5,5]
             Do it until we are back to the orginal size, and the displacements is what we want. In practice, this method is really faster compare to single-scale, it only take about 20-30 second for 
-            the .tif picture to be correctly aligned.
+            the .tif image to be correctly aligned.
         </p>
         
 
