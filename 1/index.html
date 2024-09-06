@@ -73,8 +73,8 @@
         }
 
         .image-column img {
-            width: 60%;
-            margin-bottom: 20px;
+            width: 80%;
+            margin-bottom: 40px;
             border-radius: 8px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
@@ -110,23 +110,81 @@
             Do it until we are back to the orginal size, and the displacements is what we want. In practice, this method is really faster compare to single-scale, it only take about 20-30 second for 
             the .tif picture to be correctly aligned.
         </p>
-        <h2>B&W: Edge alignment</h2>
-        <p>However, merely with multisacle search won't solve any alignment. Some picture like emir.tif still performs bad. I think the reason is probably beause the empire is in the center of the picture 
-            and the brightness of r,g,b channels vary a lot. Therefore, I try a new way. I use cv2.Canny to find out where the edges are, then I do alignment according to these edges using method 2.2 . 
-            After I get the displacements, I apply it to the original r,g,b picture. And it turns out that it works really well.
-        </p>
+        
 
         <h3>Picture Show</h3>
         <div class="image-container">
             <div class="image-column">
                 <h4>Single-scale</h4>
-                <img src="media/cathedral.jpg" alt="pic1">
-                <img src="media/cathedral.jpg" alt="pic3">
+                <img src="media/Single/cathedral.jpg" alt="pic1">
+                <img src="media/Single/monastery.jpg" alt="pic3">
+                <img src="media/Single/tobolsk.jpg" alt="pic3">
+                <img src="media/Single/lady.jpg" alt="pic3">
+                <img src="media/Single/emir.jpg" alt="pic3">
+                <img src="media/Single/icon_single.jpg" alt="pic3">
+                <img src="media/Single/sculpture_single.jpg" alt="pic3">
             </div>
             <div class="image-column">
                 <h4>Pyramid</h4>
-                <img src="media/cathedral.jpg" alt="pic2">
-                <img src="media/cathedral.jpg" alt="pic4">
+                <img src="media/Single/cathedral.jpg" alt="pic1">
+                <img src="media/Single/monastery.jpg" alt="pic3">
+                <img src="media/Single/tobolsk.jpg" alt="pic3">
+                <img src="media/Pyramid/lady.jpg" alt="pic3">
+                <img src="media/Pyramid/emir.jpg" alt="pic3">
+                <img src="media/Pyramid/icon.jpg" alt="pic3">
+                <img src="media/Pyramid/sculpture.jpg" alt="pic3">
+            </div>
+        </div>
+
+
+        <h2>B&W: 1.Edge alignment</h2>
+        <p>However, merely with multisacle search won't solve every alignment. Some picture like emir.tif still performs bad. I think the reason is probably beause the empire is in the center of the picture 
+            and the brightness of r,g,b channels vary a lot. Therefore, I try a new way. I use cv2.Canny to find out where the edges are, then I do alignment according to these edges using method 2.2 . 
+            After I get the displacements, I apply it to the original r,g,b picture. And it turns out that it works really well.
+        </p>
+        <h3>Picture Show</h3>
+        <div class="image-container">
+            <div class="image-column">
+                <h4>Pyramid</h4>
+                <img src="media/Pyramid/emir.jpg" alt="pic3">
+            </div>
+            <div class="image-column">
+                <h4>Edge alignment</h4>
+                <img src="media/edge_alignment/emir.jpg" alt="pic3">
+            </div>
+        </div>
+
+        <h2>B&W: 2.Automatic contrasting</h2>
+        <p>I use histogram equalization to achieve this. I first change the RGB image to HSV image, because the histogram of three channel of RGB is different
+            , if I apply histogram equalization on each channel, their ratio will change, which cause the colour of the RGB image to change. When I get the HSV image
+            I apply histogram equalization to it and then change it back to RGB image.
+        </p>
+        <h3>Picture Show</h3>
+        <div class="image-container">
+            <div class="image-column">
+                <h4>Original</h4>
+                <img src="media/Pyramid/emir.jpg" alt="pic3">
+                <img src="media/Pyramid/lady.jpg" alt="pic3">
+            </div>
+            <div class="image-column">
+                <h4>Automatic contrasting</h4>
+                <img src="media/contrasting/emir.jpg" alt="pic3">
+                <img src="media/contrasting/lady.jpg" alt="pic3">
+            </div>
+        </div>
+
+        <h2>B&W: 2.Automatic contrasting</h2>
+        <p>In the end, I download some image from the Internet to test the validation of my code, and it turns out to be good.
+        </p>
+        <h3>Picture Show</h3>
+        <div class="image-container">
+            <div class="image-column">
+                <img src="media/more/rock.jpg" alt="pic3">
+                <img src="media/more/forest.jpg" alt="pic3">
+            </div>
+            <div class="image-column">
+                <img src="media/more/field.jpg" alt="pic3">
+                <img src="media/more/flower.jpg" alt="pic3">
             </div>
         </div>
 
