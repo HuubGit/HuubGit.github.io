@@ -109,7 +109,7 @@
             to align and the performance is not good enough. Therefore, I use image pyramid to shrink the picture until its width/length is about 200-300 pixels. Then I do 
             exhaustive search, then base on the previous displacements, do exhaustive search again on next level picture but with smaller displacements window, for example, I take [-5,5]
             Do it until we are back to the orginal size, and the displacements is what we want. In practice, this method is really faster compare to single-scale, it only take about 20-30 second for 
-            the .tif image to be correctly aligned.
+            the .tif picture to be correctly aligned.
         </p>
         
 
@@ -118,24 +118,60 @@
             <div class="image-column">
                 <h4>Single-scale</h4>
                 <img src="media/single/cathedral.jpg" alt="pic1">
-                <p>1234</p>
+                <p>g: (5,2)      r: (12,3)</p>
                 <img src="media/single/monastery.jpg" alt="pic3">
-                <p>333</p>
+                <p>g: (-3, 2)    r: (3, 2)</p>
                 <img src="media/single/tobolsk.jpg" alt="pic3">
+                <p>g: (3, 3)     r: (6, 3)</p>
                 <img src="media/single/lady.jpg" alt="pic3">
+                <p>g: (10, 10)   r: (10, -10)</p>
                 <img src="media/single/emir.jpg" alt="pic3">
+                <p>g: (10, 10)   r: (10, 10)</p>
                 <img src="media/single/icon_single.jpg" alt="pic3">
+                <p>g: (10, 10)   r: (10, 10)</p>
                 <img src="media/single/sculpture_single.jpg" alt="pic3">
+                <p>g: (10, 10)   r: (10, 10)</p>
+                <img src="media/single/harvesters.jpg" alt="pic3">
+                <p>g: (10, 10)   r: (10, 10)</p>
+                <img src="media/single/melons.jpg" alt="pic3">
+                <p>g: (10, -2)   r: (10, -10)</p>
+                <img src="media/single/onion_church.jpg" alt="pic3">
+                <p>g: (10, 10)   r: (10, 10)</p>
+                <img src="media/single/self_portrait.jpg" alt="pic3">
+                <p>g: (10, 10)   r: (10, 10)</p>
+                <img src="media/single/three_generations.jpg" alt="pic3">
+                <p>g: (10, 2)   r: (10, 1)</p>
+                <img src="media/single/train.jpg" alt="pic3">
+                <p>g: (10, 9)   r: (10, 10)</p>
             </div>
             <div class="image-column">
                 <h4>Pyramid</h4>
                 <img src="media/single/cathedral.jpg" alt="pic1">
+                <p>g: (5,2)      r: (12,3)</p>
                 <img src="media/single/monastery.jpg" alt="pic3">
+                <p>g: (-3, 2)    r: (3, 2)</p>
                 <img src="media/single/tobolsk.jpg" alt="pic3">
+                <p>g: (3, 3)     r: (6, 3)</p>
                 <img src="media/pyramid/lady.jpg" alt="pic3">
+                <p>g: (55, 9)   r: (114, 11)</p>
                 <img src="media/pyramid/emir.jpg" alt="pic3">
+                <p>g: (49, 24)   r: (104, 58)</p>
                 <img src="media/pyramid/icon.jpg" alt="pic3">
+                <p>g: (40, 17)   r: (89, 23)</p>
                 <img src="media/pyramid/sculpture.jpg" alt="pic3">
+                <p>g: (33, -11)   r: (140, -26)</p>
+                <img src="media/single/harvesters.jpg" alt="pic3">
+                <p>g: (60, 16)   r: (124, 13)</p>
+                <img src="media/single/melons.jpg" alt="pic3">
+                <p>g: (82, 9)   r: (178, 12)</p>
+                <img src="media/single/onion_church.jpg" alt="pic3">
+                <p>g: (51, 26)   r: (108, 36)</p>
+                <img src="media/single/self_portrait.jpg" alt="pic3">
+                <p>g: (80, 29)   r: (175, 34)</p>
+                <img src="media/single/three_generations.jpg" alt="pic3">
+                <p>g: (55, 12)   r: (112, 10)</p>
+                <img src="media/single/train.jpg" alt="pic3">
+                <p>g: (43, 6)   r: (87, 32)</p>
             </div>
         </div>
 
@@ -150,10 +186,12 @@
             <div class="image-column">
                 <h4>Pyramid</h4>
                 <img src="media/pyramid/emir.jpg" alt="pic3">
+                <p>g: (49, 24)   r: (104, 58)</p>
             </div>
             <div class="image-column">
                 <h4>Edge alignment</h4>
                 <img src="media/edge_alignment/emir.jpg" alt="pic3">
+                <p>g: (49, 24)   r: (107, 40)</p>
             </div>
         </div>
 
